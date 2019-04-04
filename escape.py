@@ -33,8 +33,40 @@ def draw_squares(number):
         L.extend(draw_square(t, i * 2))
         return L
 
-def draw_squares_until_escaped(n):
+def draw_squares_until_escaped(number):
     t = turtle.Turtle()
-    L = draw_squares(n)
+    L = draw_squares(number)
     with open("data_square", "wb") as f:
+        pickle.dump(L, f)
+
+def draw_triangles(number):
+    t = turtle.Turtle()
+    for i in range(1, number):
+        t.forward(i*10)
+        t.right(120)
+
+def draw_spirals_until_escaped():
+    t = turtle.Turtle()
+    t.penup()
+    t.left(random.randint(0, 360))
+    t.pendown()
+
+    i = 0
+    turn = 360/random.randint(1, 10)
+    L = []
+    store_position_data(L, t)
+    while not escaped(t.position())
+        i += 1
+        t.forward(i*5)
+        t.right(turn)
+        store_position_data(L, t)
+
+    return L
+
+def draw_random_spirangles():
+    L = []
+    for i in range(10):
+        L.extend(draw_spirals_until_escaped())
+
+    with open("data_rand", "wb") as f:
         pickle.dump(L, f)
