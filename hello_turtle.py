@@ -2,7 +2,7 @@ import turtle
 
 def draw_bag():
     turtle.shape('turtle')
-    turtle.pen(pencolor='brown', pensize=5)
+    turtle.pen(pencolor='green', pensize=5)
     turtle.penup()
     turtle.goto(-35, 35)
     turtle.pendown()
