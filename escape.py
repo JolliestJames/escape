@@ -55,7 +55,7 @@ def draw_spirals_until_escaped():
     turn = 360/random.randint(1, 10)
     L = []
     store_position_data(L, t)
-    while not escaped(t.position())
+    while not escaped(t.position()):
         i += 1
         t.forward(i*5)
         t.right(turn)
