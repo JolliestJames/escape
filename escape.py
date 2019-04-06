@@ -97,7 +97,7 @@ def draw_random_spirangles():
         pickle.dump(L, f)
 
 if __name__ == '__main__':
-    fns = {
+    functions = {
         "line": draw_line,
         "squares": draw_squares_until_escaped,
         "triangles": draw_triangles,
@@ -105,12 +105,12 @@ if __name__ == '__main__':
     }
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("-f", "--function", choices=fns, help="One of" + ','.join(fns.keys()))
+    parser.add_argument("-f", "--function", choices=functions, help="One of" + ','.join(functions.keys()))
     parser.add_argument("-n", "--number", default=50, type=int, help="How many?")
     args = parser.parse_args()
 
     try:
-        f = fns[args.function]
+        f = functions[args.function]
         turtle.setworldcoordinates(-70., -70., 70., 70.)
         draw_bag()
         turtle.hideturtle()
